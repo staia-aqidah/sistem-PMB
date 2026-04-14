@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMB 2025/2026 — IAI Al-Aqidah Al-Hasyimiyyah Jakarta</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary:    #00695C;
+    --primary-dk: #004D40;
+    --primary-lt: #E0F2F1;
+    --primary-xl: #F0FAF8;
+    --gold:       #C9A84C;
+    --gold-lt:    #FDF6E3;
+    --text:       #1C2B29;
+    --text-md:    #4A6360;
+    --text-lt:    #7A9E9B;
+    --border:     #CBE0DD;
+    --border-lt:  #E8F3F1;
+    --bg:         #EDF5F3;
+    --white:      #FFFFFF;
+    --danger:     #C62828;
+    --danger-lt:  #FFF3F3;
+    --info-bg:    #EFF6FF;
+    --info-bd:    #BFDBFE;
+    --info-text:  #1E40AF;
+    --r:          10px;
+    --r-lg:       16px;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--primary-dk);
+    padding: 8px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .topbar-text { font-size: 11px; color: rgba(255,255,255,0.75); letter-spacing: 0.03em; }
+  .topbar-dot  { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* HERO */
+  .hero {
+    background: var(--primary);
+    padding: 2.5rem 2rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-orb1 {
+    position: absolute; width: 280px; height: 280px; border-radius: 50%;
+    background: rgba(255,255,255,0.04); top: -80px; right: -80px; pointer-events: none;
+  }
+  .hero-orb2 {
+    position: absolute; width: 160px; height: 160px; border-radius: 50%;
+    background: rgba(255,255,255,0.04); bottom: 20px; left: -40px; pointer-events: none;
+  }
+  .hero-logo-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 88px; height: 88px; background: var(--white); border-radius: 22px;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.15); margin-bottom: 1.1rem;
+    position: relative; z-index: 1;
+  }
+  .hero-logo-wrap img { width: 64px; height: 64px; object-fit: contain; border-radius: 10px; }
+  .hero-inst {
+    font-size: 11px; font-weight: 600; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-bottom: 6px; position: relative; z-index: 1;
+  }
+  .hero-title {
+    font-size: 21px; font-weight: 700; color: #fff;
+    line-height: 1.25; margin-bottom: 6px; position: relative; z-index: 1;
+  }
+  .hero-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .hero-chips { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+  .hero-chip {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.9); font-size: 11px; font-weight: 500;
+    padding: 4px 12px; border-radius: 20px; letter-spacing: 0.02em;
+  }
+  .hero-chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* TABS */
+  .tabs { background: var(--primary-dk); display: flex; }
+  .tab {
+    flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
+    padding: 12px 6px; font-size: 11.5px; font-weight: 500;
+    color: rgba(255,255,255,0.4); border-bottom: 3px solid transparent;
+    transition: color .2s, border-color .2s; cursor: default;
+  }
+  .tab-num {
+    width: 20px; height: 20px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.25); font-size: 10px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    transition: background .2s, border-color .2s;
+  }
+  .tab.active { color: #fff; border-bottom-color: var(--gold); }
+  .tab.active .tab-num { background: var(--gold); border-color: var(--gold); color: #fff; }
+  .tab.done { color: rgba(255,255,255,0.6); }
+  .tab.done .tab-num { background: rgba(255,255,255,0.18); border-color: transparent; }
+
+  /* PROGRESS BAR */
+  .prog-bar { height: 3px; background: rgba(0,0,0,0.1); }
+  .prog-fill { height: 100%; background: var(--gold); transition: width .4s ease; }
+
+  /* CARD & FORM */
+  .card { background: var(--white); max-width: 740px; margin: 0 auto; box-shadow: 0 8px 40px rgba(0,105,92,0.10); }
+  .fb { padding: 2rem 2rem 1.5rem; }
+  .step { display: none; }
+  .step.active { display: block; }
+
+  /* SECTION */
+  .sec { display: flex; align-items: center; gap: 9px; margin: 1.75rem 0 1.1rem; }
+  .sec:first-child { margin-top: 0; }
+  .sec-icon {
+    width: 28px; height: 28px; border-radius: 8px; background: var(--primary-lt);
+    display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0;
+  }
+  .sec-label { font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.08em; }
+  .sec-line { flex: 1; height: 1px; background: var(--border-lt); }
+
+  /* GRID */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .full { grid-column: 1 / -1; }
+
+  /* FIELD */
+  .fg { display: flex; flex-direction: column; gap: 5px; }
+  label { font-size: 12px; font-weight: 600; color: var(--text-md); letter-spacing: 0.01em; }
+  label .req { color: var(--danger); margin-left: 1px; }
+
+  input[type=text], input[type=email], input[type=tel],
+  input[type=date], input[type=number], select, textarea {
+    width: 100%; padding: 10px 13px;
+    border: 1.5px solid var(--border); border-radius: var(--r);
+    font-family: inherit; font-size: 13.5px; color: var(--text);
+    background: var(--white); outline: none;
+    transition: border-color .15s, box-shadow .15s;
+    -webkit-appearance: none; appearance: none;
+    text-transform: uppercase;
+  }
+  input[type=email] { text-transform: lowercase; }
+  input[type=date]  { text-transform: none; }
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237A9E9B' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 13px center;
+    padding-right: 36px; cursor: pointer; text-transform: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(0,105,92,0.10);
+    background: var(--primary-xl);
+  }
+  input::placeholder, textarea::placeholder { color: #B0C8C5; text-transform: none; }
+  textarea { resize: vertical; min-height: 76px; line-height: 1.6; }
+  .field-note { font-size: 11px; color: var(--text-lt); margin-top: 2px; }
+
+  /* ERROR */
+  .err-msg { font-size: 11px; color: var(--danger); margin-top: 3px; display: none; }
+  .err-msg.show { display: block; }
+  input.invalid, select.invalid, textarea.invalid {
+    border-color: var(--danger); background: var(--danger-lt);
+  }
+
+  /* DLL */
+  .dll-wrap { display: none; margin-top: 7px; }
+  .dll-wrap.show { display: block; }
+
+  /* PINDAHAN BOX */
+  .pindahan-box {
+    background: var(--info-bg); border: 1.5px solid var(--info-bd);
+    border-radius: var(--r-lg); padding: 1.25rem 1.5rem;
+    margin-top: 1.25rem; display: none;
+  }
+  .pindahan-box.show { display: block; }
+  .pindahan-box .sec-label { color: var(--info-text); }
+  .pindahan-box .sec-icon  { background: #DBEAFE; }
+  .pindahan-box .sec-line  { background: var(--info-bd); }
+
+  /* UPLOAD */
+  .upload-item { margin-bottom: 14px; }
+  .upload-label { font-size: 12px; font-weight: 600; color: var(--text-md); display: block; margin-bottom: 5px; }
+  .upload-label .req { color: var(--danger); }
+  .upload-label .opt { font-size: 11px; font-weight: 400; color: var(--text-lt); margin-left: 4px; }
+  .upload-zone {
+    border: 1.5px dashed var(--border); border-radius: var(--r);
+    padding: 11px 14px; cursor: pointer;
+    transition: border-color .15s, background .15s; position: relative;
+  }
+  .upload-zone:hover { border-color: var(--primary); background: var(--primary-xl); }
+  .upload-zone input[type=file] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer;
+    width: 100%; height: 100%; border: none; padding: 0; text-transform: none;
+  }
+  .upload-zone input[type=file]:focus { box-shadow: none; }
+  .uz { display: flex; align-items: center; gap: 11px; pointer-events: none; }
+  .uz-ico {
+    width: 36px; height: 36px; border-radius: 9px; background: var(--primary-lt);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  .uz-name { font-size: 12.5px; font-weight: 600; color: var(--text); }
+  .uz-hint { font-size: 11px; color: var(--text-lt); margin-top: 1px; }
+  .upload-zone.filled { border-color: var(--primary); background: var(--primary-xl); border-style: solid; }
+  .upload-zone.filled .uz-name { color: var(--primary); }
+
+  /* ALERT */
+  .alert {
+    display: none; padding: 12px 15px; border-radius: var(--r);
+    font-size: 13px; line-height: 1.5; margin-top: 1.1rem;
+    background: var(--danger-lt); border: 1.5px solid #FFCDD2; color: var(--danger);
+  }
+
+  /* NAV & BUTTONS */
+  .nav { display: flex; gap: 10px; margin-top: 1.75rem; }
+  .btn {
+    padding: 11px 22px; border-radius: var(--r); font-family: inherit;
+    font-size: 13px; font-weight: 600; cursor: pointer; border: none;
+    transition: background .15s, transform .1s; letter-spacing: 0.01em;
+  }
+  .btn:active:not(:disabled) { transform: scale(0.98); }
+  .btn-back { background: var(--border-lt); color: var(--text-md); flex-shrink: 0; }
+  .btn-back:hover { background: var(--border); }
+  .btn-next { background: var(--primary); color: #fff; flex: 1; }
+  .btn-next:hover:not(:disabled) { background: var(--primary-dk); }
+  .btn-next:disabled { background: #9fc4bf; cursor: not-allowed; }
+  .submit-wrap { margin-top: 1.75rem; }
+  .btn-submit {
+    width: 100%; padding: 14px; border-radius: var(--r);
+    background: var(--primary); color: #fff; font-family: inherit;
+    font-size: 14.5px; font-weight: 700; border: none; cursor: pointer;
+    letter-spacing: 0.02em; transition: background .15s;
+  }
+  .btn-submit:hover:not(:disabled) { background: var(--primary-dk); }
+  .btn-submit:disabled { background: #9fc4bf; cursor: not-allowed; }
+
+  /* SUCCESS */
+  .success { display: none; text-align: center; padding: 3rem 2rem 3.5rem; }
+  .success-ring {
+    width: 80px; height: 80px; border-radius: 50%;
+    background: var(--primary-lt); border: 3px solid var(--primary);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; margin: 0 auto 1.5rem;
+  }
+  .success h2 { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+  .success p  { font-size: 13.5px; color: var(--text-md); line-height: 1.7; }
+  .no-pmb {
+    display: inline-block; font-size: 24px; font-weight: 800;
+    color: var(--primary-dk); background: var(--primary-lt);
+    border: 2px solid var(--primary); border-radius: var(--r);
+    padding: 10px 32px; margin: 1.1rem 0; letter-spacing: 3px;
+  }
+  .success-note {
+    background: var(--gold-lt); border: 1.5px solid #E8D49A;
+    border-radius: var(--r); padding: 12px 16px; margin-top: 1.25rem;
+    font-size: 12.5px; color: #7A5C0A; line-height: 1.6;
+  }
+
+  /* REFERRAL */
+  .ref-locked {
+    background: var(--primary-xl) !important;
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+    border-color: var(--primary) !important;
+    cursor: not-allowed !important;
+  }
+  .ref-badge {
+    display: none; margin-top: 5px;
+    font-size: 11px; font-weight: 600; color: var(--primary);
+    background: var(--primary-lt); border: 1px solid var(--border);
+    border-radius: 20px; padding: 3px 10px; width: fit-content;
+  }
+  .ref-badge.show { display: inline-flex; align-items: center; gap: 4px; }
+
+  /* FOOTER */
+  .foot { background: var(--primary-dk); padding: 1rem 2rem; text-align: center; }
+  .foot p { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+  .foot a { color: var(--gold); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .fb { padding: 1.5rem 1.25rem 1.25rem; }
+    .g2, .g3 { grid-template-columns: 1fr; }
+    .full { grid-column: 1; }
+    .hero { padding: 2rem 1.25rem 0; }
+    .hero-title { font-size: 18px; }
+    .tab .tab-text { display: none; }
+    .topbar { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <span class="topbar-text">Institut Agama Islam Al-Aqidah Al-Hasyimiyyah Jakarta</span>
+    <span class="topbar-dot"></span>
+    <span class="topbar-text">PMB Tahun Akademik 2025/2026</span>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+    <div class="hero-logo-wrap">
+      <img src="https://aqidah.ac.id/wp-content/uploads/2026/01/cropped-icon-192-192x192.png" alt="Logo IAI Al-Aqidah Al-Hasyimiyyah">
+    </div>
+    <div class="hero-inst">Institut Agama Islam Al-Aqidah Al-Hasyimiyyah Jakarta</div>
+    <h1 class="hero-title">Formulir Pendaftaran<br>Mahasiswa Baru</h1>
+    <p class="hero-sub">Bergabunglah bersama kami dan wujudkan cita-cita Anda</p>
+    <div class="hero-chips">
+      <span class="hero-chip"><span class="hero-chip-dot"></span>KPI</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>PAI</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>PGMI</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>PIAUD</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>AS</span>
+      <span class="hero-chip"><span class="hero-chip-dot"></span>HES</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab active" id="tab1"><div class="tab-num">1</div><span class="tab-text">Data Diri</span></div>
+    <div class="tab" id="tab2"><div class="tab-num">2</div><span class="tab-text">Data Orang Tua</span></div>
+    <div class="tab" id="tab3"><div class="tab-num">3</div><span class="tab-text">Lampiran</span></div>
+  </div>
+  <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:33%"></div></div>
+
+  <div class="fb">
+
+    <!-- STEP 1 -->
+    <div class="step active" id="step1">
+      <div class="sec"><div class="sec-icon">👤</div><span class="sec-label">Identitas Mahasiswa</span><div class="sec-line"></div></div>
+      <div class="g2">
+        <div class="fg full">
+          <label>Nama Lengkap <span class="req">*</span></label>
+          <input type="text" id="namaLengkap" placeholder="Sesuai KTP, tanpa singkatan">
+          <span class="err-msg" id="err-namaLengkap">Nama lengkap wajib diisi</span>
+        </div>
+        <div class="fg">
+          <label>NIK <span class="req">*</span></label>
+          <input type="text" id="nik" maxlength="16" placeholder="16 digit NIK">
+          <span class="err-msg" id="err-nik">NIK wajib diisi (16 digit)</span>
+        </div>
+        <div class="fg">
+          <label>NISN <span class="req">*</span></label>
+          <input type="text" id="nisn" maxlength="10" placeholder="10 digit NISN">
+          <span class="err-msg" id="err-nisn">NISN wajib diisi (10 digit)</span>
+        </div>
+        <div class="fg">
+          <label>Tempat Lahir <span class="req">*</span></label>
+          <input type="text" id="tempatLahir" placeholder="Nama kota / kabupaten">
+          <span class="err-msg" id="err-tempatLahir">Tempat lahir wajib diisi</span>
+        </div>
+        <div class="fg">
+          <label>Tanggal Lahir <span class="req">*</span></label>
+          <input type="date" id="tanggalLahir">
+          <span class="err-msg" id="err-tanggalLahir">Tanggal lahir wajib diisi</span>
+        </div>
+        <div class="fg">
+          <label>Jenis Kelamin <span class="req">*</span></label>
+          <select id="jenisKelamin">
+            <option value="">— Pilih —</option>
+            <option value="L">Laki-laki</option>
+            <option value="P">Perempuan</option>
+          </select>
+          <span class="err-msg" id="err-jenisKelamin">Jenis kelamin wajib dipilih</span>
+        </div>
+        <div class="fg full">
+          <label>Sekolah Asal <span class="req">*</span></label>
+          <input type="text" id="sekolahAsal" placeholder="Nama lengkap SMA / MA / SMK">
+          <span class="err-msg" id="err-sekolahAsal">Sekolah asal wajib diisi</span>
+        </div>
+      </div>
+
+      <div class="sec"><div class="sec-icon">🎓</div><span class="sec-label">Data Pendaftaran</span><div class="sec-line"></div></div>
+      <div class="g2">
+        <div class="fg">
+          <label>Program Studi Pilihan <span class="req">*</span></label>
+          <select id="prodiPilihan" onchange="window.toggleJenjang()">
+            <option value="">— Pilih Prodi —</option>
+            <option value="KPI">KPI — Komunikasi &amp; Penyiaran Islam</option>
+            <option value="PAI">PAI — Pendidikan Agama Islam</option>
+            <option value="PGMI">PGMI — Pendidikan Guru MI</option>
+            <option value="PIAUD">PIAUD — Pend. Islam Anak Usia Dini</option>
+            <option value="AS">AS — Ahwal Syakhshiyah</option>
+            <option value="HES">HES — Hukum Ekonomi Syariah</option>
+          </select>
+          <span class="err-msg" id="err-prodiPilihan">Program studi wajib dipilih</span>
+        </div>
+        <div class="fg" id="fgJenjang" style="display:none">
+          <label>Jenjang <span class="req">*</span></label>
+          <select id="jenjangStudi">
+            <option value="S1">S1 — Strata 1</option>
+            <option value="S2">S2 — Strata 2 (Magister)</option>
+          </select>
+          <span class="field-note">S2 hanya tersedia untuk prodi PAI</span>
+          <span class="err-msg" id="err-jenjangStudi">Jenjang wajib dipilih</span>
+        </div>
+        <div class="fg">
+          <label>Kelas <span class="req">*</span></label>
+          <select id="kelas">
+            <option value="">— Pilih Kelas —</option>
+            <option value="Reguler">Reguler</option>
+            <option value="Intensif">Intensif</option>
+          </select>
+          <span class="err-msg" id="err-kelas">Kelas wajib dipilih</span>
+        </div>
+        <div class="fg">
+          <label>Status Mahasiswa <span class="req">*</span></label>
+          <select id="statusMahasiswa" onchange="window.togglePindahan()">
+            <option value="">— Pilih —</option>
+            <option value="Baru">Mahasiswa Baru</option>
+            <option value="Pindahan">Mahasiswa Pindahan</option>
+          </select>
+          <span class="err-msg" id="err-statusMahasiswa">Status mahasiswa wajib dipilih</span>
+        </div>
+        <div class="fg">
+          <label>Email Aktif <span class="req">*</span></label>
+          <input type="email" id="email" placeholder="email@contoh.com">
+          <span class="field-note">Digunakan untuk keperluan administrasi</span>
+          <span class="err-msg" id="err-email">Email aktif wajib diisi</span>
+        </div>
+        <div class="fg">
+          <label>No. HP / WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="noHp" maxlength="15" placeholder="08xxxxxxxxxx">
+          <span class="field-note">Nomor aktif yang bisa dihubungi</span>
+          <span class="err-msg" id="err-noHp">Nomor HP wajib diisi</span>
+        </div>
+        <div class="fg full">
+          <label>Alamat Domisili <span class="req">*</span></label>
+          <textarea id="alamatDomisili" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota, Provinsi"></textarea>
+          <span class="err-msg" id="err-alamatDomisili">Alamat domisili wajib diisi</span>
+        </div>
+        <div class="fg full">
+          <label>Kode Referral <span style="font-size:11px;font-weight:400;color:var(--text-lt)">(opsional)</span></label>
+          <input type="text" id="kodeReferral" maxlength="20" placeholder="Kosongkan jika tidak ada" style="text-transform:uppercase" oninput="window.cekRefLive(this.value)">
+          <span class="ref-badge" id="refBadge">🔒 Terisi otomatis dari tautan pendaftaran</span>
+          <span class="field-note" id="refNote">Isi jika Anda didaftarkan melalui agen / komisi referral</span>
+          <span id="refValid" style="display:none;font-size:11px;margin-top:3px"></span>
+        </div>
+      </div>
+
+      <!-- Pindahan -->
+      <div class="pindahan-box" id="pindahanBox">
+        <div class="sec" style="margin-top:0"><div class="sec-icon">🏫</div><span class="sec-label">Data Mahasiswa Pindahan</span><div class="sec-line"></div></div>
+        <div class="g2">
+          <div class="fg full">
+            <label>Nama Perguruan Tinggi Asal <span class="req">*</span></label>
+            <input type="text" id="ptAsal" placeholder="Nama universitas / institut asal">
+            <span class="err-msg" id="err-ptAsal">PT asal wajib diisi</span>
+          </div>
+          <div class="fg">
+            <label>Jenjang Prodi Asal <span class="req">*</span></label>
+            <select id="jenjangAsal">
+              <option value="">— Pilih —</option>
+              <option value="D1">D1</option>
+              <option value="D2">D2</option>
+              <option value="D3">D3</option>
+              <option value="D4">D4</option>
+              <option value="S1">S1</option>
+            </select>
+            <span class="err-msg" id="err-jenjangAsal">Jenjang wajib dipilih</span>
+          </div>
+          <div class="fg">
+            <label>Program Studi Asal <span class="req">*</span></label>
+            <input type="text" id="prodiAsal" placeholder="Nama prodi di PT asal">
+            <span class="err-msg" id="err-prodiAsal">Prodi asal wajib diisi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert" id="alertStep1"></div>
+      <div class="nav">
+        <div></div>
+        <button class="btn btn-next" id="btnStep1Next" onclick="window.goStep1Lanjut()">Selanjutnya →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step" id="step2">
+      <div class="sec"><div class="sec-icon">👨</div><span class="sec-label">Data Ayah</span><div class="sec-line"></div></div>
+      <div class="g2">
+        <div class="fg full">
+          <label>Nama Bapak <span class="req">*</span></label>
+          <input type="text" id="namaBapak" placeholder="Nama lengkap ayah">
+          <span class="err-msg" id="err-namaBapak">Nama bapak wajib diisi</span>
+        </div>
+        <div class="fg full">
+          <label>Pekerjaan Bapak <span class="req">*</span></label>
+          <select id="pkjBapakSel" onchange="window.toggleDLL('bapak')">
+            <option value="">— Pilih —</option>
+            <option value="PNS">PNS</option>
+            <option value="Karyawan">Karyawan</option>
+            <option value="Wiraswasta">Wiraswasta</option>
+            <option value="Buruh">Buruh</option>
+            <option value="Petani">Petani</option>
+            <option value="DLL">Lainnya (isi manual)</option>
+          </select>
+          <span class="err-msg" id="err-pkjBapakSel">Pekerjaan bapak wajib diisi</span>
+          <div class="dll-wrap" id="pkjBapakDLLWrap">
+            <input type="text" id="pkjBapakDLL" placeholder="Tulis pekerjaan bapak...">
+          </div>
+        </div>
+      </div>
+
+      <div class="sec"><div class="sec-icon">👩</div><span class="sec-label">Data Ibu</span><div class="sec-line"></div></div>
+      <div class="g2">
+        <div class="fg full">
+          <label>Nama Ibu <span class="req">*</span></label>
+          <input type="text" id="namaIbu" placeholder="Nama lengkap ibu">
+          <span class="err-msg" id="err-namaIbu">Nama ibu wajib diisi</span>
+        </div>
+        <div class="fg full">
+          <label>Pekerjaan Ibu <span class="req">*</span></label>
+          <select id="pkjIbuSel" onchange="window.toggleDLL('ibu')">
+            <option value="">— Pilih —</option>
+            <option value="PNS">PNS</option>
+            <option value="Karyawan">Karyawan</option>
+            <option value="Wiraswasta">Wiraswasta</option>
+            <option value="Buruh">Buruh</option>
+            <option value="Petani">Petani</option>
+            <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+            <option value="DLL">Lainnya (isi manual)</option>
+          </select>
+          <span class="err-msg" id="err-pkjIbuSel">Pekerjaan ibu wajib diisi</span>
+          <div class="dll-wrap" id="pkjIbuDLLWrap">
+            <input type="text" id="pkjIbuDLL" placeholder="Tulis pekerjaan ibu...">
+          </div>
+        </div>
+        <div class="fg full">
+          <label>Alamat Orang Tua <span class="req">*</span></label>
+          <textarea id="alamatOrtu" placeholder="Jalan, RT/RW, Kelurahan, Kecamatan, Kota, Provinsi"></textarea>
+          <span class="err-msg" id="err-alamatOrtu">Alamat orang tua wajib diisi</span>
+        </div>
+      </div>
+
+      <div class="nav">
+        <button class="btn btn-back" onclick="window.goStep(1)">← Kembali</button>
+        <button class="btn btn-next" onclick="window.goStep(3)">Selanjutnya →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step" id="step3">
+      <div class="sec"><div class="sec-icon">📎</div><span class="sec-label">Berkas Wajib</span><div class="sec-line"></div></div>
+
+      <div class="upload-item">
+        <label class="upload-label">Ijazah SMA / MA / SMK <span class="req">*</span><span class="opt">PDF atau JPG, maks. 5 MB</span></label>
+        <div class="upload-zone" id="zIjazah">
+          <input type="file" id="fIjazah" accept=".pdf,.jpg,.jpeg,.png" onchange="window.onFile(this,'zIjazah','lbIjazah')">
+          <div class="uz"><div class="uz-ico">📄</div><div><div class="uz-name" id="lbIjazah">Pilih file atau seret ke sini</div><div class="uz-hint">Scan/foto ijazah yang jelas dan terbaca</div></div></div>
+        </div>
+      </div>
+
+      <div class="g2">
+        <div class="upload-item">
+          <label class="upload-label">KTP <span class="req">*</span><span class="opt">JPG/PNG, maks. 2 MB</span></label>
+          <div class="upload-zone" id="zKTP">
+            <input type="file" id="fKTP" accept=".jpg,.jpeg,.png,.pdf" onchange="window.onFile(this,'zKTP','lbKTP')">
+            <div class="uz"><div class="uz-ico">🪪</div><div><div class="uz-name" id="lbKTP">Pilih file</div><div class="uz-hint">JPG / PNG / PDF</div></div></div>
+          </div>
+        </div>
+        <div class="upload-item">
+          <label class="upload-label">Kartu Keluarga <span class="req">*</span><span class="opt">PDF/JPG, maks. 5 MB</span></label>
+          <div class="upload-zone" id="zKK">
+            <input type="file" id="fKK" accept=".pdf,.jpg,.jpeg,.png" onchange="window.onFile(this,'zKK','lbKK')">
+            <div class="uz"><div class="uz-ico">👨‍👩‍👧</div><div><div class="uz-name" id="lbKK">Pilih file</div><div class="uz-hint">PDF / JPG</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec"><div class="sec-icon">📸</div><span class="sec-label">Pas Foto Terbaru</span><div class="sec-line"></div></div>
+      <p style="font-size:12px;color:var(--text-lt);margin-bottom:1rem">Upload satu file per ukuran. Cetak masing-masing <strong style="color:var(--text-md)">4 lembar</strong> untuk pengumpulan fisik.</p>
+      <div class="g3">
+        <div class="upload-item">
+          <label class="upload-label">Pas Foto 2×3 <span class="req">*</span></label>
+          <div class="upload-zone" id="zF23">
+            <input type="file" id="fFoto23" accept=".jpg,.jpeg,.png" onchange="window.onFile(this,'zF23','lbF23')">
+            <div class="uz"><div class="uz-ico">📷</div><div><div class="uz-name" id="lbF23">Pilih foto</div><div class="uz-hint">JPG/PNG, ≤1 MB</div></div></div>
+          </div>
+        </div>
+        <div class="upload-item">
+          <label class="upload-label">Pas Foto 3×4 <span class="req">*</span></label>
+          <div class="upload-zone" id="zF34">
+            <input type="file" id="fFoto34" accept=".jpg,.jpeg,.png" onchange="window.onFile(this,'zF34','lbF34')">
+            <div class="uz"><div class="uz-ico">📷</div><div><div class="uz-name" id="lbF34">Pilih foto</div><div class="uz-hint">JPG/PNG, ≤1 MB</div></div></div>
+          </div>
+        </div>
+        <div class="upload-item">
+          <label class="upload-label">Pas Foto 4×6 <span class="req">*</span></label>
+          <div class="upload-zone" id="zF46">
+            <input type="file" id="fFoto46" accept=".jpg,.jpeg,.png" onchange="window.onFile(this,'zF46','lbF46')">
+            <div class="uz"><div class="uz-ico">📷</div><div><div class="uz-name" id="lbF46">Pilih foto</div><div class="uz-hint">JPG/PNG, ≤1 MB</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lampiran Pindahan -->
+      <div class="pindahan-box" id="lampiranPindahan">
+        <div class="sec" style="margin-top:0"><div class="sec-icon">📋</div><span class="sec-label">Lampiran Mahasiswa Pindahan</span><div class="sec-line"></div></div>
+        <div class="upload-item">
+          <label class="upload-label">KHS — Kartu Hasil Studi (semua semester) <span class="req">*</span><span class="opt">PDF, maks. 10 MB</span></label>
+          <div class="upload-zone" id="zKHS">
+            <input type="file" id="fKHS" accept=".pdf" onchange="window.onFile(this,'zKHS','lbKHS')">
+            <div class="uz"><div class="uz-ico">📊</div><div><div class="uz-name" id="lbKHS">Pilih file PDF</div><div class="uz-hint">Gabungkan semua semester dalam satu PDF</div></div></div>
+          </div>
+        </div>
+        <div class="upload-item" style="margin-bottom:0">
+          <label class="upload-label">Surat Keterangan Pindah <span class="req">*</span><span class="opt">PDF, maks. 5 MB</span></label>
+          <div class="upload-zone" id="zSurat">
+            <input type="file" id="fSurat" accept=".pdf" onchange="window.onFile(this,'zSurat','lbSurat')">
+            <div class="uz"><div class="uz-ico">📝</div><div><div class="uz-name" id="lbSurat">Pilih file PDF</div><div class="uz-hint">Surat resmi bermaterai dari PT asal</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert" id="alertMsg"></div>
+      <div class="submit-wrap">
+        <button class="btn-submit" id="btnSubmit" onclick="window.submitForm()">Kirim Pendaftaran</button>
+      </div>
+      <div class="nav" style="margin-top:10px">
+        <button class="btn btn-back" onclick="window.goStep(2)">← Kembali</button>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- SUKSES -->
+    <div class="success" id="successCard">
+      <div class="success-ring">✅</div>
+      <h2>Pendaftaran Berhasil!</h2>
+      <p>Nomor Pendaftaran Anda</p>
+      <div class="no-pmb" id="noPendaftaran">PMB-2025-0001</div>
+      <p>Simpan nomor ini sebagai bukti pendaftaran.</p>
+      <p style="margin-top:8px">📍 Silahkan datang ke kampus untuk melakukan verifikasi data dan pembayaran biaya pendaftaran.</p>
+      <div class="success-note">⚠️ Harap melengkapi berkas fisik dan menyerahkannya ke Sekretariat Kampus IAI Al-Aqidah Al-Hasyimiyyah Jakarta sesuai jadwal yang ditetapkan.</div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <p>© 2025 Institut Agama Islam Al-Aqidah Al-Hasyimiyyah Jakarta<br>
+    <a href="https://aqidah.ac.id" target="_blank">aqidah.ac.id</a> &nbsp;·&nbsp; Penerimaan Mahasiswa Baru 2025/2026</p>
+  </div>
+
+</div>
+
+<script>
+  var _v = <?= cacheBust ?>;
+
+  // ── Referral Code — baca dari URL parameter (server-side) ──
+  var _refLocked = false;
+  (function() {
+    var refCode = '<?= refCode ?>';
+    if (!refCode) return;
+    var el = document.getElementById('kodeReferral');
+    el.value    = refCode;
+    el.readOnly = true;
+    el.classList.add('ref-locked');
+    document.getElementById('refNote').style.display = 'none';
+
+    // Validasi kode pre-linked ke server
+    var badge = document.getElementById('refBadge');
+    badge.classList.add('show');
+    badge.textContent = '⏳ Memverifikasi kode referral...';
+    badge.style.color = 'var(--text-lt)';
+    google.script.run
+      .withSuccessHandler(function(r) {
+        if (r.valid) {
+          _refLocked = true;
+          badge.textContent = '🔒 Referral: ' + r.nama;
+          badge.style.color = 'var(--primary)';
+        } else {
+          // Kode tidak valid — unlock field, tampilkan peringatan
+          el.readOnly = false;
+          el.classList.remove('ref-locked');
+          el.value = '';
+          badge.textContent = '⚠️ Kode referral di tautan tidak valid. Silakan isi manual atau kosongkan.';
+          badge.style.color = 'var(--danger)';
+          badge.style.background = 'var(--danger-lt)';
+          badge.style.borderColor = '#FFCDD2';
+        }
+      })
+      .withFailureHandler(function() {
+        badge.textContent = '⚠️ Gagal memverifikasi kode referral.';
+        badge.style.color = 'var(--danger)';
+      })
+      .cekReferral(refCode);
+  })();
+
+  // ── State ──────────────────────────────────────────────
+  var currentStep = 1;
+  var progPct = { 1: '33%', 2: '66%', 3: '100%' };
+
+  // ── Auto Uppercase ─────────────────────────────────────
+  var upperFields = [
+    'namaLengkap','nik','nisn','tempatLahir','sekolahAsal',
+    'ptAsal','prodiAsal','alamatDomisili',
+    'namaBapak','namaIbu','alamatOrtu',
+    'pkjBapakDLL','pkjIbuDLL'
+  ];
+
+  function toUpper() {
+    upperFields.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = el.value.toUpperCase();
+    });
+  }
+
+  // ── Helpers ────────────────────────────────────────────
+  function v(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function clearErrors() {
+    document.querySelectorAll('.err-msg').forEach(function(el) { el.classList.remove('show'); });
+    document.querySelectorAll('.invalid').forEach(function(el) { el.classList.remove('invalid'); });
+  }
+
+  function fieldError(id, msg) {
+    var el  = document.getElementById(id);
+    var err = document.getElementById('err-' + id);
+    if (el)  el.classList.add('invalid');
+    if (err) { if (msg) err.textContent = msg; err.classList.add('show'); }
+  }
+
+  function showAlert(msg) {
+    var el = document.getElementById('alertMsg');
+    el.style.display = 'block';
+    el.textContent   = msg;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function setBtn(msg, disabled) {
+    var b = document.getElementById('btnSubmit');
+    b.textContent = msg;
+    b.disabled    = disabled;
+  }
+
+  // ── Navigation ─────────────────────────────────────────
+  function showStep1Alert(msg) {
+    var el = document.getElementById('alertStep1');
+    el.style.display = 'block';
+    el.textContent   = msg;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  function hideStep1Alert() {
+    document.getElementById('alertStep1').style.display = 'none';
+  }
+
+  function goStep(n) {
+    // Step 1→2 tidak melalui sini langsung — pakai goStep1Lanjut()
+    if (n > currentStep && !validateStep(currentStep)) return;
+    _doGoStep(n);
+  }
+
+  function _doGoStep(n) {
+    document.getElementById('step' + currentStep).classList.remove('active');
+    var oldTab = document.getElementById('tab' + currentStep);
+    oldTab.classList.remove('active');
+    if (n > currentStep) oldTab.classList.add('done');
+    else                 oldTab.classList.remove('done');
+    currentStep = n;
+    document.getElementById('step' + n).classList.add('active');
+    document.getElementById('tab'  + n).classList.add('active');
+    document.getElementById('progFill').style.width = progPct[n];
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Tombol "Selanjutnya" step 1 — cek duplikat dulu sebelum lanjut
+  function goStep1Lanjut() {
+    hideStep1Alert();
+    if (!validateStep(1)) return;
+
+    var nik  = v('nik');
+    var nisn = v('nisn');
+    var btn  = document.getElementById('btnStep1Next');
+    btn.disabled    = true;
+    btn.textContent = '⏳ Memeriksa data...';
+
+    google.script.run
+      .withSuccessHandler(function(r) {
+        btn.disabled    = false;
+        btn.textContent = 'Selanjutnya →';
+        if (r.duplikat) {
+          showStep1Alert(
+            '⚠️ Data sudah terdaftar! NIK atau NISN ini sudah ada di sistem (Baris ' +
+            r.baris + ' atas nama ' + r.nama +
+            '). Hubungi panitia jika ini bukan Anda.'
+          );
+        } else {
+          _doGoStep(2);
+        }
+      })
+      .withFailureHandler(function(e) {
+        btn.disabled    = false;
+        btn.textContent = 'Selanjutnya →';
+        showStep1Alert('Gagal memeriksa data: ' + e.message + '. Silakan coba lagi.');
+      })
+      .cekDuplikatForm(nik, nisn);
+  }
+
+  // ── Toggle Jenjang (hanya muncul untuk PAI) ───────────────
+  function toggleJenjang() {
+    var prodi  = document.getElementById('prodiPilihan').value;
+    var fg     = document.getElementById('fgJenjang');
+    var selJnj = document.getElementById('jenjangStudi');
+    if (prodi === 'PAI') {
+      fg.style.display = '';          // tampilkan
+    } else {
+      fg.style.display = 'none';      // sembunyikan
+      selJnj.value     = 'S1';        // reset ke S1
+    }
+  }
+
+  // ── Toggle Pindahan ────────────────────────────────────
+  function togglePindahan() {
+    var on = document.getElementById('statusMahasiswa').value === 'Pindahan';
+    document.getElementById('pindahanBox').classList.toggle('show', on);
+    document.getElementById('lampiranPindahan').classList.toggle('show', on);
+  }
+
+  // ── Toggle DLL Pekerjaan ───────────────────────────────
+  function toggleDLL(who) {
+    var key  = who === 'bapak' ? 'Bapak' : 'Ibu';
+    var val  = document.getElementById('pkj' + key + 'Sel').value;
+    document.getElementById('pkj' + key + 'DLLWrap').classList.toggle('show', val === 'DLL');
+  }
+
+  function getPekerjaan(who) {
+    var key = who === 'bapak' ? 'Bapak' : 'Ibu';
+    var val = document.getElementById('pkj' + key + 'Sel').value;
+    return val === 'DLL'
+      ? document.getElementById('pkj' + key + 'DLL').value.trim()
+      : val;
+  }
+
+  // ── File Upload Preview ────────────────────────────────
+  function onFile(input, zoneId, labelId) {
+    var zone = document.getElementById(zoneId);
+    var lb   = document.getElementById(labelId);
+    if (input.files[0]) {
+      zone.classList.add('filled');
+      lb.textContent = '✓ ' + input.files[0].name;
+    } else {
+      zone.classList.remove('filled');
+      lb.textContent = 'Pilih file';
+    }
+  }
+
+  // ── Validasi ───────────────────────────────────────────
+  function validateStep(n) {
+    clearErrors();
+    var valid = true;
+
+    if (n === 1) {
+      var checks = [
+        { id: 'namaLengkap',     msg: 'Nama lengkap wajib diisi' },
+        { id: 'jenisKelamin',    msg: 'Jenis kelamin wajib dipilih' },
+        { id: 'tempatLahir',     msg: 'Tempat lahir wajib diisi' },
+        { id: 'tanggalLahir',    msg: 'Tanggal lahir wajib diisi' },
+        { id: 'sekolahAsal',     msg: 'Sekolah asal wajib diisi' },
+        { id: 'prodiPilihan',    msg: 'Program studi wajib dipilih' },
+        { id: 'kelas',           msg: 'Kelas wajib dipilih' },
+        { id: 'statusMahasiswa', msg: 'Status mahasiswa wajib dipilih' },
+        { id: 'email',           msg: 'Email aktif wajib diisi' },
+        { id: 'noHp',            msg: 'Nomor HP / WhatsApp wajib diisi' },
+        { id: 'alamatDomisili',  msg: 'Alamat domisili wajib diisi' }
+      ];
+      checks.forEach(function(c) {
+        if (!v(c.id)) { fieldError(c.id, c.msg); valid = false; }
+      });
+
+      var nik = v('nik');
+      if (!nik)              { fieldError('nik',  'NIK wajib diisi (16 digit)');  valid = false; }
+      else if (nik.length !== 16) { fieldError('nik',  'NIK harus tepat 16 digit');   valid = false; }
+
+      var nisn = v('nisn');
+      if (!nisn)              { fieldError('nisn', 'NISN wajib diisi (10 digit)'); valid = false; }
+      else if (nisn.length !== 10) { fieldError('nisn', 'NISN harus tepat 10 digit');  valid = false; }
+
+      // Jenjang hanya wajib dipilih jika prodi PAI (field muncul)
+      if (document.getElementById('prodiPilihan').value === 'PAI') {
+        if (!document.getElementById('jenjangStudi').value) {
+          fieldError('jenjangStudi', 'Jenjang wajib dipilih'); valid = false;
+        }
+      }
+
+      if (document.getElementById('statusMahasiswa').value === 'Pindahan') {
+        if (!v('ptAsal'))      { fieldError('ptAsal',     'PT asal wajib diisi');    valid = false; }
+        if (!v('jenjangAsal')) { fieldError('jenjangAsal','Jenjang wajib dipilih');  valid = false; }
+        if (!v('prodiAsal'))   { fieldError('prodiAsal',  'Prodi asal wajib diisi'); valid = false; }
+      }
+    }
+
+    if (n === 2) {
+      if (!v('namaBapak'))        { fieldError('namaBapak',   'Nama bapak wajib diisi');    valid = false; }
+      if (!getPekerjaan('bapak')) { fieldError('pkjBapakSel', 'Pekerjaan bapak wajib diisi'); valid = false; }
+      if (!v('namaIbu'))          { fieldError('namaIbu',     'Nama ibu wajib diisi');      valid = false; }
+      if (!getPekerjaan('ibu'))   { fieldError('pkjIbuSel',   'Pekerjaan ibu wajib diisi'); valid = false; }
+      if (!v('alamatOrtu'))       { fieldError('alamatOrtu',  'Alamat orang tua wajib diisi'); valid = false; }
+    }
+
+    if (!valid) {
+      var firstErr = document.querySelector('.invalid');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return valid;
+  }
+
+  // ── File to Base64 ─────────────────────────────────────
+  function toB64(file) {
+    return new Promise(function(res, rej) {
+      var r = new FileReader();
+      r.onload  = function() { res(r.result.split(',')[1]); };
+      r.onerror = rej;
+      r.readAsDataURL(file);
+    });
+  }
+
+  // ── Upload satu file ke Drive ──────────────────────────
+  function uploadFile(b64, fileName, mimeType, sub, personal) {
+    return new Promise(function(res, rej) {
+      google.script.run
+        .withSuccessHandler(function(r) { r.success ? res(r.url) : rej(new Error(r.message)); })
+        .withFailureHandler(function(e) { rej(e); })
+        .uploadSingleFile(b64, fileName, mimeType, sub, personal);
+    });
+  }
+
+  // ── Submit Form ────────────────────────────────────────
+  async function submitForm() {
+    toUpper();
+
+    var isPindahan = document.getElementById('statusMahasiswa').value === 'Pindahan';
+    var sub        = isPindahan ? 'Mahasiswa Pindahan' : 'Mahasiswa Baru';
+
+    var fIjazah = document.getElementById('fIjazah').files[0];
+    var fKTP    = document.getElementById('fKTP').files[0];
+    var fKK     = document.getElementById('fKK').files[0];
+    var fF23    = document.getElementById('fFoto23').files[0];
+    var fF34    = document.getElementById('fFoto34').files[0];
+    var fF46    = document.getElementById('fFoto46').files[0];
+
+    if (!fIjazah) return showAlert('File Ijazah SMA wajib diupload.');
+    if (!fKTP)    return showAlert('File KTP wajib diupload.');
+    if (!fKK)     return showAlert('File Kartu Keluarga wajib diupload.');
+    if (!fF23)    return showAlert('Pas Foto 2×3 wajib diupload.');
+    if (!fF34)    return showAlert('Pas Foto 3×4 wajib diupload.');
+    if (!fF46)    return showAlert('Pas Foto 4×6 wajib diupload.');
+
+    var fKHS = null, fSurat = null;
+    if (isPindahan) {
+      fKHS   = document.getElementById('fKHS').files[0];
+      fSurat = document.getElementById('fSurat').files[0];
+      if (!fKHS)   return showAlert('KHS wajib diupload untuk mahasiswa pindahan.');
+      if (!fSurat) return showAlert('Surat Keterangan Pindah wajib diupload.');
+    }
+
+    document.getElementById('alertMsg').style.display = 'none';
+    setBtn('Mengupload Ijazah SMA... (1/6)', true);
+
+    var nisn     = v('nisn');
+    var nama     = v('namaLengkap');
+    var personal = nama.replace(/\s+/g, '_') + '_' + nisn;
+
+    try {
+      var urlIjazah = await uploadFile(await toB64(fIjazah), 'Ijazah_SMA_'+nisn+'.pdf', fIjazah.type, sub, personal);
+      setBtn('Mengupload KTP... (2/6)', true);
+      var urlKTP    = await uploadFile(await toB64(fKTP),    'KTP_'+nisn+'.jpg',         fKTP.type,    sub, personal);
+      setBtn('Mengupload Kartu Keluarga... (3/6)', true);
+      var urlKK     = await uploadFile(await toB64(fKK),     'KK_'+nisn+'.pdf',          fKK.type,     sub, personal);
+      setBtn('Mengupload Pas Foto 2×3... (4/6)', true);
+      var urlFoto23 = await uploadFile(await toB64(fF23),    'Foto_2x3_'+nisn+'.jpg',    fF23.type,    sub, personal);
+      setBtn('Mengupload Pas Foto 3×4... (5/6)', true);
+      var urlFoto34 = await uploadFile(await toB64(fF34),    'Foto_3x4_'+nisn+'.jpg',    fF34.type,    sub, personal);
+      setBtn('Mengupload Pas Foto 4×6... (6/6)', true);
+      var urlFoto46 = await uploadFile(await toB64(fF46),    'Foto_4x6_'+nisn+'.jpg',    fF46.type,    sub, personal);
+
+      var urlKHS = '', urlSurat = '';
+      if (isPindahan) {
+        setBtn('Mengupload KHS...', true);
+        urlKHS   = await uploadFile(await toB64(fKHS),   'KHS_'+nisn+'.pdf',          fKHS.type,   sub, personal);
+        setBtn('Mengupload Surat Pindah...', true);
+        urlSurat = await uploadFile(await toB64(fSurat), 'Surat_Pindah_'+nisn+'.pdf', fSurat.type, sub, personal);
+      }
+
+      setBtn('Menyimpan data...', true);
+
+      var fd = {
+        nik:            v('nik'),
+        namaLengkap:    nama,
+        tempatLahir:    v('tempatLahir'),
+        tanggalLahir:   v('tanggalLahir'),
+        jenisKelamin:   document.getElementById('jenisKelamin').value,
+        nisn:           nisn,
+        sekolahAsal:    v('sekolahAsal'),
+        prodiPilihan:   document.getElementById('prodiPilihan').value,
+        jenjang:        document.getElementById('prodiPilihan').value === 'PAI'
+                          ? document.getElementById('jenjangStudi').value
+                          : 'S1',
+        kelas:          document.getElementById('kelas').value,
+        statusMahasiswa:document.getElementById('statusMahasiswa').value,
+        ptAsal:         v('ptAsal'),
+        jenjangAsal:    document.getElementById('jenjangAsal').value,
+        prodiAsal:      v('prodiAsal'),
+        alamatDomisili: v('alamatDomisili'),
+        email:          v('email'),
+        noHp:           v('noHp'),
+        namaBapak:      v('namaBapak'),
+        pekerjaanBapak: getPekerjaan('bapak'),
+        namaIbu:        v('namaIbu'),
+        pekerjaanIbu:   getPekerjaan('ibu'),
+        alamatOrtu:     v('alamatOrtu'),
+        urlIjazah: urlIjazah, urlKTP: urlKTP, urlKK: urlKK,
+        urlFoto23: urlFoto23, urlFoto34: urlFoto34, urlFoto46: urlFoto46,
+        urlKHS: urlKHS, urlSurat: urlSurat,
+        kodeReferral: v('kodeReferral')
+      };
+
+      google.script.run
+        .withSuccessHandler(function(r) {
+          if (r.success) {
+            document.getElementById('step3').style.display      = 'none';
+            document.getElementById('successCard').style.display = 'block';
+            document.getElementById('noPendaftaran').textContent = r.noPendaftaran;
+            document.getElementById('progFill').style.width      = '100%';
+          } else if (r.duplikat) {
+            showAlert('⚠️ ' + r.message);
+            setBtn('Kirim Pendaftaran', false);
+          } else {
+            showAlert('Gagal menyimpan: ' + r.message);
+            setBtn('Kirim Pendaftaran', false);
+          }
+        })
+        .withFailureHandler(function(e) {
+          showAlert('Error: ' + e.message);
+          setBtn('Kirim Pendaftaran', false);
+        })
+        .simpanData(fd);
+
+    } catch(e) {
+      showAlert('Gagal upload: ' + e.message + '. Pastikan ukuran file tidak melebihi batas dan koneksi stabil.');
+      setBtn('Kirim Pendaftaran', false);
+    }
+  }
+
+  // ── Live validasi kode referral (hanya jika diketik manual) ──
+  var refTimer = null;
+  function cekRefLive(val) {
+    val = val.trim().toUpperCase();
+    var el = document.getElementById('refValid');
+    el.style.display = 'none';
+    clearTimeout(refTimer);
+    if (!val) return;
+    el.style.display = 'block';
+    el.style.color   = 'var(--text-lt)';
+    el.textContent   = '⏳ Memeriksa kode...';
+    refTimer = setTimeout(function() {
+      google.script.run
+        .withSuccessHandler(function(r) {
+          if (r.valid) {
+            el.style.color   = 'var(--primary)';
+            el.textContent   = '✅ Kode valid — Agen: ' + r.nama;
+          } else {
+            el.style.color   = 'var(--danger)';
+            el.textContent   = '❌ Kode referral tidak ditemukan';
+          }
+        })
+        .withFailureHandler(function() { el.style.display = 'none'; })
+        .cekReferral(val);
+    }, 700);
+  }
+
+  // ── Expose ke global scope ─────────────────────────────
+  window.goStep         = goStep;
+  window.goStep1Lanjut  = goStep1Lanjut;
+  window.toggleJenjang  = toggleJenjang;
+  window.togglePindahan = togglePindahan;
+  window.toggleDLL      = toggleDLL;
+  window.onFile         = onFile;
+  window.submitForm     = submitForm;
+  window.cekRefLive     = cekRefLive;
+</script>
+</body>
+</html>
