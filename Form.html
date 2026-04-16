@@ -396,6 +396,128 @@
   .dll-wrap.show { display: block; }
 
   /* PINDAHAN BOX */
+
+  /* REVIEW SECTION */
+  .review-section {
+    margin-bottom: 2rem;
+  }
+  
+  .review-card {
+    background: rgba(13,79,44,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .review-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .review-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--hijau-tua);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .review-content {
+    display: grid;
+    gap: 12px;
+  }
+  
+  .review-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(212,197,160,0.3);
+  }
+  
+  .review-item:last-child {
+    border-bottom: none;
+  }
+  
+  .review-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--teks-mid);
+  }
+  
+  .review-value {
+    font-size: 0.85rem;
+    color: var(--teks-gelap);
+    font-weight: 500;
+    text-align: right;
+    max-width: 60%;
+    word-break: break-word;
+  }
+  
+  .review-value.empty {
+    color: var(--teks-abu);
+    font-style: italic;
+  }
+
+  /* CHECKLIST SECTION */
+  .checklist-section {
+    background: rgba(13,79,44,0.05);
+    border: 1px solid var(--hijau-mid);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .checklist-items {
+    margin-top: 1rem;
+  }
+  
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  
+  .checklist-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .checklist-item input[type="checkbox"]:checked {
+    background: var(--hijau-tua);
+    border-color: var(--hijau-tua);
+  }
+  
+  .checklist-item input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+    line-height: 14px;
+  }
+  
+  .checklist-item span {
+    font-size: 0.85rem;
+    color: var(--teks-gelap);
+    line-height: 1.5;
+    flex: 1;
+  }
   .pindahan-box {
     background: rgba(13,79,44,0.07);
     border: 1.5px solid var(--hijau-mid);
@@ -718,6 +840,7 @@
     <div class="tab active" id="tab1"><div class="tab-num">1</div><span class="tab-text">Data Diri</span></div>
     <div class="tab" id="tab2"><div class="tab-num">2</div><span class="tab-text">Data Orang Tua</span></div>
     <div class="tab" id="tab3"><div class="tab-num">3</div><span class="tab-text">Lampiran</span></div>
+    <div class="tab" id="tab4"><div class="tab-num">4</div><span class="tab-text">Review & Submit</span></div>
   </div>
 
   <!-- MAIN WRAPPER -->
@@ -931,8 +1054,8 @@
         </div>
       </div>
 
-      <div class="nav">
-        <button class="btn btn-back" onclick="window.goStep(1)">← Kembali</button>
+<div class="nav">
+        <button class="btn btn-back" onclick="window.goStep(2)">← Kembali</button>
         <button class="btn btn-next" onclick="window.goStep(3)">Selanjutnya →</button>
       </div>
     </div>
@@ -1012,12 +1135,72 @@
       </div>
 
       <div class="alert" id="alertMsg"></div>
-      <div class="submit-wrap">
-        <button class="btn-submit" id="btnSubmit" onclick="window.submitForm()">Kirim Pendaftaran</button>
-      </div>
-      <div class="nav" style="margin-top:10px">
+      <div class="nav">
         <button class="btn btn-back" onclick="window.goStep(2)">← Kembali</button>
-        <div></div>
+        <button class="btn btn-next" onclick="window.goStep(4)">Selanjutnya →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step" id="step4">
+      <div class="sec"><div class="sec-icon">✓</div><span class="sec-label">Review Data Pendaftaran</span><div class="sec-line"></div></div>
+      
+      <div class="review-section">
+        <div class="review-card">
+          <div class="review-header">
+            <h3>📋 Data Diri</h3>
+          </div>
+          <div class="review-content" id="reviewPersonalData">
+            <!-- Data will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3>👨‍👩‍👧‍👦 Data Orang Tua</h3>
+          </div>
+          <div class="review-content" id="reviewParentData">
+            <!-- Data will be populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <h3>📎 Berkas Terupload</h3>
+          </div>
+          <div class="review-content" id="reviewFiles">
+            <!-- File data will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- CHECKLIST -->
+      <div class="checklist-section">
+        <div class="sec"><div class="sec-icon">✅</div><span class="sec-label">Konfirmasi Sebelum Submit</span><div class="sec-line"></div></div>
+        <div class="checklist-items">
+          <label class="checklist-item">
+            <input type="checkbox" id="check1" required>
+            <span>Saya telah memeriksa kembali semua data di atas dengan teliti</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" id="check2" required>
+            <span>Saya menyatakan bahwa semua data yang diisi adalah benar dan valid</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" id="check3" required>
+            <span>Saya telah melengkapi semua berkas wajib yang diminta</span>
+          </label>
+          <label class="checklist-item">
+            <input type="checkbox" id="check4" required>
+            <span>Saya menyetujui syarat dan ketentuan pendaftaran PMB</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="alert" id="alertStep4"></div>
+      <div class="nav">
+        <button class="btn btn-back" onclick="window.goStep(3)">← Kembali</button>
+        <button class="btn btn-next" id="btnStep4Submit" onclick="window.goStep4Submit()">Submit Pendaftaran →</button>
       </div>
     </div>
 
@@ -1086,7 +1269,7 @@
 
   // ── State ──────────────────────────────────────────────
   var currentStep = 1;
-  var progPct = { 1: '33%', 2: '66%', 3: '100%' };
+  var progPct = { 1: '25%', 2: '50%', 3: '75%', 4: '100%' };
 
   // ── Auto Uppercase ─────────────────────────────────────
   var upperFields = [
@@ -1129,9 +1312,46 @@
   }
 
   function setBtn(msg, disabled) {
-    var b = document.getElementById('btnSubmit');
-    b.textContent = msg;
-    b.disabled    = disabled;
+    var btn = document.getElementById('btnStep4Submit');
+    if (!btn) btn = document.getElementById('btnSubmit');
+    if (btn) {
+      btn.textContent = msg;
+      btn.disabled = disabled;
+    }
+  }
+
+  function disableAllButtons() {
+    var buttons = document.querySelectorAll('.btn');
+    buttons.forEach(function(btn) {
+      btn.disabled = true;
+      btn.style.opacity = '0.5';
+      btn.style.cursor = 'not-allowed';
+    });
+  }
+
+  function enableAllButtons() {
+    var buttons = document.querySelectorAll('.btn');
+    buttons.forEach(function(btn) {
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+    });
+  }
+
+  function showLoadingOverlay() {
+    var overlay = document.createElement('div');
+    overlay.id = 'loadingOverlay';
+    overlay.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:9999;flex-direction:column;gap:20px"><div style="width:60px;height:60px;border:5px solid var(--emas);border-top-color:transparent;border-radius:50%;animation:spin 1s linear infinite"></div><div style="color:white;font-size:18px;font-weight:600;text-align:center">Mengirim Pendaftaran...</div><div style="color:var(--emas-terang);font-size:14px;text-align:center">Mohon tunggu, ini membutuhkan beberapa saat</div></div>';
+    document.body.appendChild(overlay);
+    
+    var style = document.createElement('style');
+    style.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+    document.head.appendChild(style);
+  }
+
+  function hideLoadingOverlay() {
+    var overlay = document.getElementById('loadingOverlay');
+    if (overlay) overlay.remove();
   }
 
   // ── Navigation ─────────────────────────────────────────
@@ -1148,6 +1368,10 @@
   function goStep(n) {
     // Step 1→2 tidak melalui sini langsung — pakai goStep1Lanjut()
     if (n > currentStep && !validateStep(currentStep)) return;
+    if (n === 4) {
+      // Populate review data before going to step 4
+      populateReviewData();
+    }
     _doGoStep(n);
   }
 
@@ -1197,6 +1421,52 @@
       .cekDuplikatForm(nik, nisn);
   }
 
+  // Tombol Submit di step 4
+  function goStep4Submit() {
+    clearErrors();
+    disableAllButtons();
+    
+    // Validate checklist
+    const checkboxes = ['check1', 'check2', 'check3', 'check4'];
+    let allChecked = true;
+    checkboxes.forEach(function(id) {
+      const checkbox = document.getElementById(id);
+      if (!checkbox.checked) {
+        checkbox.style.borderColor = 'var(--error)';
+        allChecked = false;
+      } else {
+        checkbox.style.borderColor = 'var(--border)';
+      }
+    });
+    
+    if (!allChecked) {
+      showStep4Alert('⚠️ Silakan centang semua checklist sebelum submit');
+      enableAllButtons();
+      return;
+    }
+    
+    // Validate if files are uploaded
+    if (!validateStep3Files()) {
+      showStep4Alert('⚠️ Pastikan semua berkas wajib telah diupload');
+      enableAllButtons();
+      return;
+    }
+    
+    // Submit form
+    submitForm();
+  }
+  
+  function showStep4Alert(msg) {
+    var el = document.getElementById('alertStep4');
+    el.style.display = 'block';
+    el.textContent = msg;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  
+  function hideStep4Alert() {
+    document.getElementById('alertStep4').style.display = 'none';
+  }
+
   // ── Toggle Jenjang (hanya muncul untuk PAI) ───────────────
   function toggleJenjang() {
     var prodi  = document.getElementById('prodiPilihan').value;
@@ -1243,6 +1513,158 @@
       zone.classList.remove('filled');
       lb.textContent = 'Pilih file';
     }
+  }
+
+  // ── Populate Review Data ─────────────────────────────────
+  function populateReviewData() {
+    // Personal Data
+    populatePersonalData();
+    // Parent Data  
+    populateParentData();
+    // File Data
+    populateFileData();
+  }
+  
+  function populatePersonalData() {
+    const container = document.getElementById('reviewPersonalData');
+    const fields = [
+      { label: 'Nama Lengkap', value: v('namaLengkap') },
+      { label: 'NIK', value: v('nik') },
+      { label: 'NISN', value: v('nisn') },
+      { label: 'Tempat Lahir', value: v('tempatLahir') },
+      { label: 'Tanggal Lahir', value: formatDate(v('tanggalLahir')) },
+      { label: 'Jenis Kelamin', value: getJenisKelaminText(v('jenisKelamin')) },
+      { label: 'Sekolah Asal', value: v('sekolahAsal') },
+      { label: 'Program Studi', value: getProdiText(v('prodiPilihan')) },
+      { label: 'Jenjang', value: v('jenjangStudi') || 'S1' },
+      { label: 'Kelas', value: v('kelas') },
+      { label: 'Status Mahasiswa', value: v('statusMahasiswa') },
+      { label: 'Email', value: v('email') },
+      { label: 'No. HP / WhatsApp', value: v('noHp') },
+      { label: 'Alamat Domisili', value: v('alamatDomisili') },
+      { label: 'Kode Referral', value: v('kodeReferral') || '-' }
+    ];
+    
+    // Add pindahan data if applicable
+    if (v('statusMahasiswa') === 'Pindahan') {
+      fields.push(
+        { label: 'PT Asal', value: v('ptAsal') },
+        { label: 'Jenjang Asal', value: v('jenjangAsal') },
+        { label: 'Prodi Asal', value: v('prodiAsal') }
+      );
+    }
+    
+    container.innerHTML = fields.map(field => 
+      `<div class="review-item">
+        <span class="review-label">${field.label}</span>
+        <span class="review-value ${!field.value || field.value === '-' ? 'empty' : ''}">${field.value || '-'}</span>
+      </div>`
+    ).join('');
+  }
+  
+  function populateParentData() {
+    const container = document.getElementById('reviewParentData');
+    const bapakPekerjaan = getPekerjaan('bapak');
+    const ibuPekerjaan = getPekerjaan('ibu');
+    
+    const fields = [
+      { label: 'Nama Ayah', value: v('namaBapak') },
+      { label: 'Pekerjaan Ayah', value: bapakPekerjaan },
+      { label: 'Nama Ibu', value: v('namaIbu') },
+      { label: 'Pekerjaan Ibu', value: ibuPekerjaan },
+      { label: 'Alamat Orang Tua', value: v('alamatOrtu') }
+    ];
+    
+    container.innerHTML = fields.map(field => 
+      `<div class="review-item">
+        <span class="review-label">${field.label}</span>
+        <span class="review-value ${!field.value ? 'empty' : ''}">${field.value || '-'}</span>
+      </div>`
+    ).join('');
+  }
+  
+  function populateFileData() {
+    const container = document.getElementById('reviewFiles');
+    const files = [
+      { label: 'Ijazah SMA / MA / SMK', status: getFileStatus('zIjazah') },
+      { label: 'KTP', status: getFileStatus('zKTP') },
+      { label: 'Kartu Keluarga', status: getFileStatus('zKK') },
+      { label: 'Pas Foto 2×3', status: getFileStatus('zF23') },
+      { label: 'Pas Foto 3×4', status: getFileStatus('zF34') },
+      { label: 'Pas Foto 4×6', status: getFileStatus('zF46') }
+    ];
+    
+    // Add pindahan files if applicable
+    if (v('statusMahasiswa') === 'Pindahan') {
+      files.push(
+        { label: 'KHS (Kartu Hasil Studi)', status: getFileStatus('zKHS') },
+        { label: 'Surat Keterangan Pindah', status: getFileStatus('zSurat') }
+      );
+    }
+    
+    container.innerHTML = files.map(file => 
+      `<div class="review-item">
+        <span class="review-label">${file.label}</span>
+        <span class="review-value ${file.status === '✓' ? '' : 'empty'}">${file.status}</span>
+      </div>`
+    ).join('');
+  }
+  
+  function getFileStatus(zoneId) {
+    const zone = document.getElementById(zoneId);
+    if (zone.classList.contains('filled')) return '✓ Sudah diupload';
+    return 'Belum diupload';
+  }
+  
+  function formatDate(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('id-ID', { 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric' 
+    });
+  }
+  
+  function getJenisKelaminText(value) {
+    return value === 'L' ? 'Laki-laki' : value === 'P' ? 'Perempuan' : '';
+  }
+  
+  function getProdiText(value) {
+    const prodiMap = {
+      'KPI': 'Komunikasi & Penyiaran Islam',
+      'PAI': 'Pendidikan Agama Islam',
+      'PGMI': 'Pendidikan Guru MI',
+      'PIAUD': 'Pend. Islam Anak Usia Dini',
+      'AS': 'Ahwal Syakhshiyah',
+      'HES': 'Hukum Ekonomi Syariah'
+    };
+    return prodiMap[value] || value;
+  }
+  
+  function validateStep3Files() {
+    const requiredFiles = ['zIjazah', 'zKTP', 'zKK', 'zF23', 'zF34', 'zF46'];
+    let allUploaded = true;
+    
+    requiredFiles.forEach(function(zoneId) {
+      const zone = document.getElementById(zoneId);
+      if (!zone.classList.contains('filled')) {
+        allUploaded = false;
+      }
+    });
+    
+    // Check pindahan files if applicable
+    if (v('statusMahasiswa') === 'Pindahan') {
+      const pindahanFiles = ['zKHS', 'zSurat'];
+      pindahanFiles.forEach(function(zoneId) {
+        const zone = document.getElementById(zoneId);
+        if (!zone.classList.contains('filled')) {
+          allUploaded = false;
+        }
+      });
+    }
+    
+    return allUploaded;
   }
 
   // ── Validasi ───────────────────────────────────────────
@@ -1355,6 +1777,8 @@
     }
 
     document.getElementById('alertMsg').style.display = 'none';
+    disableAllButtons();
+    showLoadingOverlay();
     setBtn('Mengupload Ijazah SMA... (1/6)', true);
 
     var nisn     = v('nisn');
@@ -1415,30 +1839,34 @@
         kodeReferral: v('kodeReferral')
       };
 
+      hideLoadingOverlay();
       google.script.run
         .withSuccessHandler(function(r) {
           if (r.success) {
             document.getElementById('step3').style.display      = 'none';
+            document.getElementById('step4').style.display      = 'none';
             document.getElementById('successCard').style.display = 'block';
             document.getElementById('noPendaftaran').textContent = r.noPendaftaran;
             document.getElementById('progFill').style.width      = '100%';
           } else if (r.duplikat) {
             showAlert('⚠️ ' + r.message);
-            setBtn('Kirim Pendaftaran', false);
+            setBtn('Submit Pendaftaran →', false);
           } else {
             showAlert('Gagal menyimpan: ' + r.message);
-            setBtn('Kirim Pendaftaran', false);
+            setBtn('Submit Pendaftaran →', false);
           }
         })
         .withFailureHandler(function(e) {
+          hideLoadingOverlay();
           showAlert('Error: ' + e.message);
-          setBtn('Kirim Pendaftaran', false);
+          setBtn('Submit Pendaftaran →', false);
         })
         .simpanData(fd);
 
     } catch(e) {
+      hideLoadingOverlay();
       showAlert('Gagal upload: ' + e.message + '. Pastikan ukuran file tidak melebihi batas dan koneksi stabil.');
-      setBtn('Kirim Pendaftaran', false);
+      setBtn('Submit Pendaftaran →', false);
     }
   }
 
